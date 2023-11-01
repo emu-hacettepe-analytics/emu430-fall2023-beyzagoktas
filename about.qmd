@@ -24,5 +24,3 @@ R, Quarto, Git, Python, Minitab, Excel, Matlab, SQL
 # Hobbies
 
 Boardgames, Painting
-
-[CV](file:///C:/Users/gokta/OneDrive/Masa%C3%BCst%C3%BC/Beyza%20G%C3%B6kta%C5%9F%20CV.pdf)
