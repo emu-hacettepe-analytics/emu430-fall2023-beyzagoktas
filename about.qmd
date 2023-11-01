@@ -5,26 +5,24 @@ sidebar: false
 
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2024 - ongoing.
 
 # Work Experience
 
-## Employements
-
-1.  Firm xxx, position xx, year xxx
-
-2.  Firm yyy, position yyy, year yyy
-
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
-
-2.  Firm bbb, position yyy, year yyy
+1.  TUSAŞ, Internal Logistics Department, July 2023
 
 # Projects
 
+Graduation Project: Mavi - Price Optimizing
+
 # Competencies
 
-R, Quarto, Git, Python
+R, Quarto, Git, Python, Minitab, Excel, Matlab, SQL
 
 # Hobbies
+
+Boardgames, Painting
+
+[CV](file:///C:/Users/gokta/OneDrive/Masa%C3%BCst%C3%BC/Beyza%20G%C3%B6kta%C5%9F%20CV.pdf)
