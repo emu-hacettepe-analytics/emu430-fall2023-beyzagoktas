@@ -9,4 +9,4 @@ Below, you'll find a brief summary of our project. To access a detailed project 
 
 **Summary**
 
-\[provide a biref summary of your project\]
+\[provide a brief summary of your project\]
