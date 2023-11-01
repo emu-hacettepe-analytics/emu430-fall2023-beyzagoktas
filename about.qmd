@@ -5,11 +5,10 @@ sidebar: false
 
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 2024 - ongoing.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2019 - ongoing.
+-   Erasmus+ Exchange Student, RWTH Aachen University, Germany, October 2022 - March 2023.
 
-# Work Experience
-
-## Internships
+# Internships
 
 1.  TUSAŞ, Internal Logistics Department, July 2023
 
@@ -24,3 +23,7 @@ R, Quarto, Git, Python, Minitab, Excel, Matlab, SQL
 # Hobbies
 
 Boardgames, Painting
+
+# Resume
+
+You can find my resume here: [BeyzaGöktaş.pdf](https://drive.google.com/file/d/1xxEFYJWOKMkO3vaC_OmpxBNEKeOJ9Jqs/view?usp=sharing)
