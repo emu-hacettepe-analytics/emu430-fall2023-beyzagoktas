@@ -36,7 +36,6 @@ website:
         - assignments.qmd
         - assignments/assignment-1.qmd
         - assignments/assignment-2.qmd
-        - assignments/assignment-3.qmd
   page-navigation: true
   back-to-top-navigation: true
   page-footer:
