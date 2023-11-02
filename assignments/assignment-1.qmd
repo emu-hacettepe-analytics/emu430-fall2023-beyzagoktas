@@ -4,12 +4,24 @@ title: "Assignment 1"
 
 # Assignment 1
 
-```{r}
-1 + 1
-```
-
-My first assignment has two parts.
+My first assignment has three parts.
 
 ## (a)
 
 ## (b)
+
+## (c)
+
+```         
+library(dslabs)
+data(na_example)
+# NA data frame
+na_example
+# Total number of NAs
+sum(is.na(na_example))
+no_nas_example <- ifelse(is.na(na_example), 0, na_example)
+# New data frame with NAs replaced with 0
+no_nas_example
+# Total number of NAs after NAs replaced with 0
+sum(is.na(no_nas_example))
+```
