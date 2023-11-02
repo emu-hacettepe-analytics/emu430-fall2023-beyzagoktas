@@ -3,6 +3,8 @@ title: "About Me"
 sidebar: false 
 ---
 
+Hello, my name is Beyza Göktaş. I'm a fourth year undergraduate student at Hacettepe University, Department of Industrial Engineering. My favorite course by far in my department is data analytics course.
+
 # Education
 
 -   B.S., Industrial Engineering, Hacettepe University, Turkey, 2019 - ongoing.
