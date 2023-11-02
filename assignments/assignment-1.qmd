@@ -8,6 +8,16 @@ My first assignment has three parts.
 
 ## (a)
 
+Here is the video I have watched: [Tracy Teal \| These are a few of my favorite things](https://youtu.be/ttLnLdU1-CQ?si=GZGiGxW5toFJibLW)
+
+The video highlighted the powerful capabilities of Quarto, a platform that seamlessly integrates code, slides, figures, and documentation. Emphasizing the significance of comprehensive documentation and integration, the discussion centered on how this approach facilitates the reproduction, effective communication, and sharing of ideas and findings. The key focus was on adapting content to meet the audience's needs while highlighting Quarto's advantages, including integrated code, visual editing, structured tables, and customizable themes. These features offer a flexible and efficient way to present and share information, fostering creativity and saving time.
+
+| Visual edits,
+| Columns and tables,
+| Code first keeps slides stable,
+| Themes to delight in and formats to share,
+| These are a few of my favorite things.
+
 ## (b)
 
 The two languages' approaches to data science are where they diverge most. Large communities support both open source programming languages, adding new libraries and tools on a regular basis. However, Python offers a more universal method of handling data wrangling, whereas R is mostly utilized for statistical analysis.
