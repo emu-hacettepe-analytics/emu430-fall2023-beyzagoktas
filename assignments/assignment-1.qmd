@@ -18,7 +18,7 @@ R, on the other hand, is mostly based on statistical models and specialized anal
 
 ### Examples
 
-1.  We can select specific elements. In Python, the values start at index 0, while in R they start at index 1:
+1.  *We can select specific elements. In Python, the values start at index 0, while in R they start at index 1:*
 
 ```{r}
 # A vector in R:
@@ -36,7 +36,7 @@ print(my_list)
 print(my_list[0])
 ```
 
-2.  When selecting multiple values, in R the index range is 1:3 = {1, 2, 3}, while in Python the index range 0:3 = {0, 1, 2} - the last value is not included.
+2.  *When selecting multiple values, in R the index range is 1:3 = {1, 2, 3}, while in Python the index range 0:3 = {0, 1, 2} - the last value is not included.*
 
 ```{r}
 my_vec[1:3]
@@ -46,7 +46,7 @@ my_vec[1:3]
 my_list[0:3]
 ```
 
-3.  Functions are defined different.
+3.  *Functions are defined different.*
 
 ```{r}
 my_sum <- function(x, y){
@@ -68,7 +68,7 @@ def my_sum(x, y):
 print(my_sum(1, 2))
 ```
 
-4.  Lists in R similar to the dictionaries in Python.
+4.  *Lists in R similar to the dictionaries in Python.*
 
 ```{r}
 my_data <- list(name = "Beyza",
