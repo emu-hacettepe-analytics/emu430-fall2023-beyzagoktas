@@ -16,7 +16,7 @@ My first assignment has three parts.
 library(dslabs)
 data(na_example)
 # NA data frame
-na_example
+print(na_example)
 # Total number of NAs
 sum(is.na(na_example))
 no_nas_example <- ifelse(is.na(na_example), 0, na_example)

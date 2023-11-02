@@ -46,7 +46,7 @@
     "href": "assignments/assignment-1.html",
     "title": "Assignment 1",
     "section": "",
-    "text": "My first assignment has three parts.\n\n\n\n\n\n\n\n\nlibrary(dslabs)\ndata(na_example)\n# NA data frame\nna_example\n# Total number of NAs\nsum(is.na(na_example))\nno_nas_example &lt;- ifelse(is.na(na_example), 0, na_example)\n# New data frame with NAs replaced with 0\nno_nas_example\n# Total number of NAs after NAs replaced with 0\nsum(is.na(no_nas_example))"
+    "text": "My first assignment has three parts.\n\n\n\n\n\n\n\n\nlibrary(dslabs)\ndata(na_example)\n# NA data frame\nprint(na_example)\n# Total number of NAs\nsum(is.na(na_example))\nno_nas_example &lt;- ifelse(is.na(na_example), 0, na_example)\n# New data frame with NAs replaced with 0\nno_nas_example\n# Total number of NAs after NAs replaced with 0\nsum(is.na(no_nas_example))"
   },
   {
     "objectID": "assignments.html",
@@ -67,6 +67,6 @@
     "href": "assignments/assignment-1.html#c",
     "title": "Assignment 1",
     "section": "",
-    "text": "library(dslabs)\ndata(na_example)\n# NA data frame\nna_example\n# Total number of NAs\nsum(is.na(na_example))\nno_nas_example &lt;- ifelse(is.na(na_example), 0, na_example)\n# New data frame with NAs replaced with 0\nno_nas_example\n# Total number of NAs after NAs replaced with 0\nsum(is.na(no_nas_example))"
+    "text": "library(dslabs)\ndata(na_example)\n# NA data frame\nprint(na_example)\n# Total number of NAs\nsum(is.na(na_example))\nno_nas_example &lt;- ifelse(is.na(na_example), 0, na_example)\n# New data frame with NAs replaced with 0\nno_nas_example\n# Total number of NAs after NAs replaced with 0\nsum(is.na(no_nas_example))"
   }
 ]
