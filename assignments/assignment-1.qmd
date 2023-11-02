@@ -12,16 +12,16 @@ My first assignment has three parts.
 
 ## (c)
 
-```         
+```{r}
 library(dslabs)
-data(na_example)
+data("na_example")
 # NA data frame
-print(na_example)
+na_example
 # Total number of NAs
 sum(is.na(na_example))
-no_nas_example <- ifelse(is.na(na_example), 0, na_example)
-# New data frame with NAs replaced with 0
-no_nas_example
-# Total number of NAs after NAs replaced with 0
-sum(is.na(no_nas_example))
+# New data frame where NAs replaced with 0.
+no_nas <- ifelse(is.na(na_example), 0, na_example)
+no_nas
+# Total number of NAs in our new data frame.
+sum(is.na(no_nas))
 ```
