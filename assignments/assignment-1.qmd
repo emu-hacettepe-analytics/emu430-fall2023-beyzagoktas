@@ -10,6 +10,80 @@ My first assignment has three parts.
 
 ## (b)
 
+The two languages' approaches to data science are where they diverge most. Large communities support both open source programming languages, adding new libraries and tools on a regular basis. However, Python offers a more universal method of handling data wrangling, whereas R is mostly utilized for statistical analysis.
+
+Like C++ and Java, Python is a multipurpose language with an easy-to-learn and understandable syntax. Python is a tool used by programmers for machine learning in scalable production contexts and for data analysis.
+
+R, on the other hand, is mostly based on statistical models and specialized analytics and was developed by statisticians. With just a few lines of code and stunning data visualizations, R is used by data scientists for extensive statistical research.
+
+### Examples
+
+1.  We can select specific elements. In Python, the values start at index 0, while in R they start at index 1:
+
+```{r}
+# A vector in R:
+my_vec <- c("a", "b", "c", "d", "e", "f")
+print(my_vec)
+# First element
+my_vec[1]
+```
+
+```{python}
+# A list in Python:
+my_list = ["a", "b", "c", "d", "e", "f"]
+print(my_list)
+# First element
+print(my_list[0])
+```
+
+2.  When selecting multiple values, in R the index range is 1:3 = {1, 2, 3}, while in Python the index range 0:3 = {0, 1, 2} - the last value is not included.
+
+```{r}
+my_vec[1:3]
+```
+
+```{python}
+my_list[0:3]
+```
+
+3.   Functions are defined different.
+
+```{r}
+my_sum <- function(x, y){
+  x <- x + 1
+  y <- y + 1
+  x + y
+}
+#Test the function
+print(my_sum(1, 2))
+```
+
+```{python}
+def my_sum(x, y):
+  x = x + 1
+  y = y + 1
+  return x + y
+#
+#Test the function
+print(my_sum(1, 2))
+```
+
+4.   Lists in R similar to the dictionaries in Python.
+
+```{r}
+my_data <- list(name = "Beyza",
+                grades = c(9, 10, 9),
+                has_attended = TRUE)
+str(my_data)
+```
+
+```{python}
+my_data = {"name": "Beyza",
+           "grades": [9, 10, 9],
+           "has_attended": True}
+print(type(my_data))
+```
+
 ## (c)
 
 ```{r}
