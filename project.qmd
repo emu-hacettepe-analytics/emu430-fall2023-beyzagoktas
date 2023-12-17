@@ -1,12 +1,14 @@
 ---
-title: "Our Course Project"
+title: "Course Project"
 sidebar: false 
 ---
 
-I'm honored to be a member of the \[group name\] project team.
+I'm honored to be a member of the Synergy project team.
 
-Below, you'll find a brief summary of our project. To access a detailed project description, please go to [https://\[your-project-url\]](#0){.uri}.
+Below, you'll find a brief summary of our project. To access a detailed project description, please go to our [webpage](https://emu-hacettepe-analytics.github.io/emu430-fall2023-team-synergy/).
 
 **Summary**
 
-\[provide a brief summary of your project\]
+In our project, we plan to utilize a dataset containing comprehensive statistics on museums and libraries across various cities in Turkey. This dataset encompasses diverse metrics, including the quantity of libraries, museums, registered library members, and museum visitors in each city.
+
+Our focus is to explore averages, maximums and other relevant parameters, aiming to provide in-depth analyzes of the cultural environment of cities over time. With these analyses, we aim to reveal valuable information about the use of cultural institutions in each city and shed light on the delicate balance between cultural service supply and demand.
