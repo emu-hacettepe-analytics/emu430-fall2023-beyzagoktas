@@ -9,9 +9,10 @@ editor:
     wrap: 70
 ---
 
-# Assignment 2
-
 ## Part 1
+
+Using the filters on https://m.imdb.com/search, Turkish movies with
+more than 2500 reviews are saved in the URLs.
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
@@ -26,6 +27,11 @@ url <- c(first,second)
 
 ## Part 2
 
+Made web scrapping to create a Data Frame with columns: Title, Year,
+Duration,
+Rating, Votes
+
 ```{r, message=FALSE, results='asis'}
+#| warning: false
 
 ```

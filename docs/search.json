@@ -18,7 +18,7 @@
     "href": "assignments/assignment-2.html",
     "title": "Assignment 2",
     "section": "",
-    "text": "Code\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+    "text": "Using the filters on https://m.imdb.com/search, Turkish movies with more than 2500 reviews are saved in the URLs.\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
   },
   {
     "objectID": "about.html",
@@ -95,7 +95,7 @@
     "href": "assignments/assignment-2.html#part-1",
     "title": "Assignment 2",
     "section": "",
-    "text": "Code\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+    "text": "Using the filters on https://m.imdb.com/search, Turkish movies with more than 2500 reviews are saved in the URLs.\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
   },
   {
     "objectID": "assignments/assignment-2.html#part-11",
@@ -103,5 +103,12 @@
     "title": "Assignment 2",
     "section": "",
     "text": "Code\nlibrary(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.3.2\nWarning: package 'tidyr' was built under R version 4.3.2\nWarning: package 'readr' was built under R version 4.3.2\nWarning: package 'purrr' was built under R version 4.3.2\nWarning: package 'dplyr' was built under R version 4.3.2\nWarning: package 'forcats' was built under R version 4.3.2\nWarning: package 'lubridate' was built under R version 4.3.2\n\nCode\nlibrary(rvest)\n\nWarning: package 'rvest' was built under R version 4.3.2\n\nCode\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+  },
+  {
+    "objectID": "assignments/assignment-2.html#part-2",
+    "href": "assignments/assignment-2.html#part-2",
+    "title": "Assignment 2",
+    "section": "Part 2",
+    "text": "Part 2\nMade web scrapping to create a Data Frame with columns: Title, Year, Duration, Rating, Votes"
   }
 ]
