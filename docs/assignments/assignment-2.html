@@ -243,16 +243,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>first <span class="ot">&lt;-</span> <span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=,2009-12-31&amp;num_votes=2500,&amp;country_of_origin=TR"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>second <span class="ot">&lt;-</span> <span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=2010-01-01,2023-12-31&amp;num_votes=2500,&amp;country_of_origin=TR"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(first,second)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>first <span class="ot">&lt;-</span> <span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=,2009-12-31&amp;num_votes=2500,&amp;country_of_origin=TR&amp;count=250"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>second <span class="ot">&lt;-</span> <span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=2010-01-01,2023-12-31&amp;num_votes=2500,&amp;country_of_origin=TR&amp;count=250"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(first,second)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </section>
 <section id="part-2" class="level2">
 <h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
-<p>Made web scrapping to create a Data Frame with columns: Title, Year, Duration, Rating, Votes</p>
+<p>Made web scrapping to create a Data Frame with columns: Title, Year, Duration, Rating, Votes.</p>
 <details>
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty data frame</span></span>
@@ -346,21 +347,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2005</td>
 <td style="text-align: right;">108</td>
 <td style="text-align: right;">8.2</td>
-<td style="text-align: right;">91043</td>
+<td style="text-align: right;">91046</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Masumiyet</td>
 <td style="text-align: right;">1997</td>
 <td style="text-align: right;">110</td>
 <td style="text-align: right;">8.1</td>
-<td style="text-align: right;">19300</td>
+<td style="text-align: right;">19301</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Kader</td>
 <td style="text-align: right;">2006</td>
 <td style="text-align: right;">103</td>
 <td style="text-align: right;">7.8</td>
-<td style="text-align: right;">16269</td>
+<td style="text-align: right;">16270</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Uzak</td>
@@ -388,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1965</td>
 <td style="text-align: right;">86</td>
 <td style="text-align: right;">8.0</td>
-<td style="text-align: right;">7133</td>
+<td style="text-align: right;">7135</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hababam Sinifi</td>
@@ -410,6 +411,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-3" class="level2">
 <h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+<p>Let’s conduct an EDA on the data set!!!</p>
+<p><em>a. Arranged the data frame in descending order by Rating. Presented the top 5 and bottom 5 movies based on user ratings.</em></p>
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_5_movies <span class="ot">&lt;-</span> movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Rating))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(top_5_movies, <span class="dv">5</span>), <span class="at">caption =</span> <span class="st">"Top 5 Movies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table">
+<caption>Top 5 Movies</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hababam Sinifi</td>
+<td style="text-align: right;">1975</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">9.2</td>
+<td style="text-align: right;">42514</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CM101MMXI Fundamentals</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">46997</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tosun Pasa</td>
+<td style="text-align: right;">1976</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24329</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hababam Sinifi Sinifta Kaldi</td>
+<td style="text-align: right;">1975</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24370</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Süt Kardesler</td>
+<td style="text-align: right;">1976</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">20889</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As a member of Generation Z, I can’t understand why Yeşilçam films are still so loved. I think their ongoing popularity is not because they are genuinely great films, but rather due to a nostalgia for the old Turkey.</p>
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>top_5_movies <span class="ot">&lt;-</span> movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Rating)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(top_5_movies, <span class="dv">5</span>), <span class="at">caption =</span> <span class="st">"Bottom 5 Movies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table">
+<caption>Bottom 5 Movies</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cumali Ceber: Allah Seni Alsin</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">39269</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reis</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">73975</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cumali Ceber 2</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">10230</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Müjde</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">9920</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15/07 Safak Vakti</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">20608</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In my opinion, take these films and throw them in the trash.</p>
 
 
 </section>

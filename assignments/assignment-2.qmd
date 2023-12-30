@@ -19,12 +19,14 @@ more than 2500 reviews are saved in the URLs.
 ```{r, message=FALSE, results='asis'}
 #| warning: false
 #| code-summary: "Show the code"
+
 library(tidyverse)
 library(rvest)
 library(knitr)
+library(ggplot2)
 library(stringr)
-first <- "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR"
-second <- "https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR"
+first <- "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR&count=250"
+second <- "https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR&count=250"
 
 url <- c(first,second)
 ```
@@ -33,7 +35,7 @@ url <- c(first,second)
 
 Made web scrapping to create a Data Frame with columns: Title, Year,
 Duration,
-Rating, Votes
+Rating, Votes.
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
@@ -107,3 +109,31 @@ kable(head(movies,10), caption = "Movies")
 ```
 
 ## Part 3
+
+Let's conduct an EDA on the data set!!!
+
+*a. Arranged the data frame in descending order by Rating. Presented
+the top 5 and bottom 5 movies based on user ratings.*
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+top_5_movies <- movies |> arrange(desc(Rating))
+kable(head(top_5_movies, 5), caption = "Top 5 Movies")
+```
+
+As a member of Generation Z, I can't understand why Yeşilçam films are
+still so loved. I think their ongoing popularity is not because they
+are genuinely great films, but rather due to a nostalgia for the old
+Turkey.
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+top_5_movies <- movies |> arrange(Rating)
+kable(head(top_5_movies, 5), caption = "Bottom 5 Movies")
+```
+
+In my opinion, take these films and throw them in the trash.
