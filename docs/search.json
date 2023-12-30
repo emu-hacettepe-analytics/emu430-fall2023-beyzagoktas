@@ -18,7 +18,7 @@
     "href": "assignments/assignment-2.html",
     "title": "Assignment 2",
     "section": "",
-    "text": "Using the filters on https://m.imdb.com/search, Turkish movies with more than 2500 reviews are saved in the URLs.\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+    "text": "My second assignment has 4 parts."
   },
   {
     "objectID": "about.html",
@@ -94,8 +94,8 @@
     "objectID": "assignments/assignment-2.html#part-1",
     "href": "assignments/assignment-2.html#part-1",
     "title": "Assignment 2",
-    "section": "",
-    "text": "Using the filters on https://m.imdb.com/search, Turkish movies with more than 2500 reviews are saved in the URLs.\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+    "section": "Part 1",
+    "text": "Part 1\nUsing the filters on https://m.imdb.com/search, Turkish movies with more than 2500 reviews are saved in the URLs.\n\nShow the code\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
   },
   {
     "objectID": "assignments/assignment-2.html#part-11",
@@ -109,6 +109,13 @@
     "href": "assignments/assignment-2.html#part-2",
     "title": "Assignment 2",
     "section": "Part 2",
-    "text": "Part 2\nMade web scrapping to create a Data Frame with columns: Title, Year, Duration, Rating, Votes"
+    "text": "Part 2\nMade web scrapping to create a Data Frame with columns: Title, Year, Duration, Rating, Votes\n\nShow the code\n# Initialize an empty data frame\nmovies &lt;- tibble(Title = character(), Year = numeric(), Duration = character(), Rating = numeric(), Votes = numeric())\n\n\n# Function to convert duration from to minutes\nconvert_to_minutes &lt;- function(time_str) {\n  if (str_detect(time_str, \"h\")) {\n    # \"h\" ve \"m\" arasındaki dakikaları ve \"h\"den önceki saatleri bul\n    hours &lt;- as.numeric(str_extract(time_str, \"\\\\d+(?=h)\"))\n    minutes &lt;- as.numeric(str_extract(time_str, \"(?&lt;=h)\\\\s*\\\\d+\"))\n    total_minutes &lt;- hours * 60 + ifelse(is.na(minutes), 0, minutes)\n  } else {\n    # \"h\" bulunmuyorsa ilk iki karakteri al\n    total_minutes &lt;- as.numeric(substr(time_str, 1, str_detect(time_str, \"m\")*2))\n  }\n  return(total_minutes)\n}\n\n# Loop through each URL\nfor (i in url) {\n  data_html &lt;- read_html(i)\n  \n  # Extracting movie titles\n  title_names &lt;- data_html |&gt; html_nodes('.ipc-title__text') |&gt; html_text()\n  title_names &lt;- tail(head(title_names, -1), -1)\n  title_names &lt;- str_split(title_names, \" \", n = 2)\n  title_names &lt;- unlist(lapply(title_names, function(x) {x[2]}))\n  \n  # Extracting years\n  year &lt;- data_html %&gt;% html_nodes(\".sc-43986a27-7.dBkaPT.dli-title-metadata\")\n  year &lt;- html_text(year)\n  year &lt;- substr(year, 1, 4)\n  year &lt;- as.numeric(year)\n  \n  # Extracting durations\n  duration &lt;- data_html %&gt;% html_nodes(\".sc-43986a27-7.dBkaPT.dli-title-metadata\")\n  duration &lt;- html_text(duration)\n  duration &lt;- substr(duration, start = 5, stop = 14)\n\n  # Extracting ratings\n  rating &lt;- data_html %&gt;% html_nodes(\".ipc-rating-star.ipc-rating-star--base.ipc-rating-star--imdb.ratingGroup--imdb-rating\")\n  rating &lt;- html_text(rating)\n  rating &lt;- substr(rating, 1, 3)\n  rating &lt;- as.numeric(rating)\n  \n  # Extracting votes\n  vote &lt;- data_html %&gt;% html_nodes(\".sc-53c98e73-0.kRnqtn\")\n  vote &lt;- html_text(vote)\n  vote &lt;- sub(\"Votes\", \"\" ,vote)\n  vote &lt;- sub(\",\", \"\", vote)\n  vote &lt;- as.numeric(vote)\n  \n  \n  temp &lt;- tibble(Title = title_names, Year = year, Duration = duration, Rating = rating, Votes = vote)\n  \n  # Append to the main data frame\n  movies &lt;- bind_rows(movies, temp)\n}\n\n#The function written above is run to organize the durations of the films\nduration_final &lt;- sapply(movies$Duration, convert_to_minutes)\nmovies$Duration &lt;- duration_final\n\n# Final results\nhead(movies,10)"
+  },
+  {
+    "objectID": "assignments/assignment-2.html#part-3",
+    "href": "assignments/assignment-2.html#part-3",
+    "title": "Assignment 2",
+    "section": "Part 3",
+    "text": "Part 3"
   }
 ]

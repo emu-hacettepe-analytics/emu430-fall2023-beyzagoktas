@@ -39,7 +39,7 @@ Rating, Votes
 #| code-summary: "Show the code"
 
 # Initialize an empty data frame
-movies_df <- tibble(Title = character(), Year = numeric(), Duration = character(), Rating = numeric(), Votes = numeric())
+movies <- tibble(Title = character(), Year = numeric(), Duration = character(), Rating = numeric(), Votes = numeric())
 
 
 # Function to convert duration from to minutes
@@ -57,8 +57,8 @@ convert_to_minutes <- function(time_str) {
 }
 
 # Loop through each URL
-for (url in urls) {
-  data_html <- read_html(url)
+for (i in url) {
+  data_html <- read_html(i)
   
   # Extracting movie titles
   title_names <- data_html |> html_nodes('.ipc-title__text') |> html_text()
@@ -91,16 +91,18 @@ for (url in urls) {
   vote <- as.numeric(vote)
   
   
-  temp_df <- tibble(Title = title_names, Year = year, Duration = duration, Rating = rating, Votes = vote)
+  temp <- tibble(Title = title_names, Year = year, Duration = duration, Rating = rating, Votes = vote)
   
   # Append to the main data frame
-  movies_df <- bind_rows(movies_df, temp_df)
+  movies <- bind_rows(movies, temp)
 }
 
 #The function written above is run to organize the durations of the films
-duration_final <- sapply(movies_df$Duration, convert_to_minutes)
-movies_df$Duration <- duration_final
+duration_final <- sapply(movies$Duration, convert_to_minutes)
+movies$Duration <- duration_final
 
 # Final results
-print(movies_df)
+head(movies,10)
 ```
+
+## Part 3
