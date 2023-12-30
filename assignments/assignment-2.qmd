@@ -21,6 +21,7 @@ more than 2500 reviews are saved in the URLs.
 #| code-summary: "Show the code"
 library(tidyverse)
 library(rvest)
+library(knitr)
 library(stringr)
 first <- "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR"
 second <- "https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR"
@@ -102,7 +103,7 @@ duration_final <- sapply(movies$Duration, convert_to_minutes)
 movies$Duration <- duration_final
 
 # Final results
-head(movies,10)
+kable(head(movies,10), caption = "Movies")
 ```
 
 ## Part 3
