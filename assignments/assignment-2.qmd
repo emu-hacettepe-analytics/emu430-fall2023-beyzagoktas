@@ -1,9 +1,31 @@
 ---
 title: "Assignment 2"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+editor: 
+  markdown: 
+    wrap: 70
 ---
 
 # Assignment 2
 
-```{r}
-1 + 1
+## Part 1
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+library(tidyverse)
+library(rvest)
+library(stringr)
+first <- "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR"
+second <- "https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR"
+
+url <- c(first,second)
+```
+
+## Part 2
+
+```{r, message=FALSE, results='asis'}
+
 ```

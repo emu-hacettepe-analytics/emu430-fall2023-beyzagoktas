@@ -18,7 +18,7 @@
     "href": "assignments/assignment-2.html",
     "title": "Assignment 2",
     "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
+    "text": "Code\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
   },
   {
     "objectID": "about.html",
@@ -82,5 +82,26 @@
     "title": "Assignment 1",
     "section": "",
     "text": "Here is the video I have watched: Tracy Teal | These are a few of my favorite things\nThe video highlighted the powerful capabilities of Quarto, a platform that seamlessly integrates code, slides, figures, and documentation. Emphasizing the significance of comprehensive documentation and integration, the discussion centered on how this approach facilitates the reproduction, effective communication, and sharing of ideas and findings. The key focus was on adapting content to meet the audience’s needs while highlighting Quarto’s advantages, including integrated code, visual editing, structured tables, and customizable themes. These features offer a flexible and efficient way to present and share information, fostering creativity and saving time.\nVisual edits,\nColumns and tables,\nCode first keeps slides stable,\nThemes to delight in and formats to share,\nThese are a few of my favorite things."
+  },
+  {
+    "objectID": "assignments/assignment-2.html#part-1.",
+    "href": "assignments/assignment-2.html#part-1.",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "library(tidyverse)\nWarning: package 'tidyverse' was built under R version 4.3.2\nWarning: package 'tidyr' was built under R version 4.3.2\nWarning: package 'readr' was built under R version 4.3.2\nWarning: package 'purrr' was built under R version 4.3.2\nWarning: package 'dplyr' was built under R version 4.3.2\nWarning: package 'forcats' was built under R version 4.3.2\nWarning: package 'lubridate' was built under R version 4.3.2\nlibrary(rvest)\nWarning: package 'rvest' was built under R version 4.3.2\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+  },
+  {
+    "objectID": "assignments/assignment-2.html#part-1",
+    "href": "assignments/assignment-2.html#part-1",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
+  },
+  {
+    "objectID": "assignments/assignment-2.html#part-11",
+    "href": "assignments/assignment-2.html#part-11",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.3.2\nWarning: package 'tidyr' was built under R version 4.3.2\nWarning: package 'readr' was built under R version 4.3.2\nWarning: package 'purrr' was built under R version 4.3.2\nWarning: package 'dplyr' was built under R version 4.3.2\nWarning: package 'forcats' was built under R version 4.3.2\nWarning: package 'lubridate' was built under R version 4.3.2\n\nCode\nlibrary(rvest)\n\nWarning: package 'rvest' was built under R version 4.3.2\n\nCode\nlibrary(stringr)\nfirst &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR\"\nsecond &lt;- \"https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR\"\n\nurl &lt;- c(first,second)"
   }
 ]
