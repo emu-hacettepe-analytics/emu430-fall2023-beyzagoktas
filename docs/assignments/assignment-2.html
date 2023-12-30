@@ -530,7 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>b. Let’s check my favorite movies :D</em></p>
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_favs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Ölümlü Dünya"</span>, <span class="st">"Ölümlü Dünya 2"</span>, <span class="st">"G.O.R.A."</span>, <span class="st">"Eyvah Eyvah"</span>, <span class="st">"Babam ve Oğlum"</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_favs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Ölümlü Dünya"</span>, <span class="st">"Ölümlü Dünya 2"</span>, <span class="st">"G.O.R.A."</span>, <span class="st">"Eyyvah Eyvah"</span>, <span class="st">"Babam ve Oglum"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Rating)) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Rank =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> <span class="fu">filter</span>(Title <span class="sc">%in%</span> my_favs), <span class="dv">5</span>), <span class="at">caption =</span> <span class="st">"My Favorites"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
@@ -548,6 +548,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Babam ve Oglum</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">91046</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">G.O.R.A.</td>
 <td style="text-align: right;">2004</td>
 <td style="text-align: right;">127</td>
@@ -555,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">66034</td>
 <td style="text-align: right;">39</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ölümlü Dünya</td>
 <td style="text-align: right;">2018</td>
 <td style="text-align: right;">107</td>
@@ -563,13 +571,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">30279</td>
 <td style="text-align: right;">87</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Ölümlü Dünya 2</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">117</td>
 <td style="text-align: right;">7.5</td>
 <td style="text-align: right;">3519</td>
 <td style="text-align: right;">109</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eyyvah Eyvah</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">7.0</td>
+<td style="text-align: right;">21443</td>
+<td style="text-align: right;">211</td>
 </tr>
 </tbody>
 </table>

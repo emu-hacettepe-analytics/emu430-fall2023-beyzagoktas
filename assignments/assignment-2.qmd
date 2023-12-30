@@ -144,6 +144,6 @@ In my opinion, take these films and throw them in the trash.
 #| warning: false
 #| code-summary: "Show the code"
 
-my_favs = c("Ölümlü Dünya", "Ölümlü Dünya 2", "G.O.R.A.", "Eyvah Eyvah", "Babam ve Oğlum")
+my_favs = c("Ölümlü Dünya", "Ölümlü Dünya 2", "G.O.R.A.", "Eyyvah Eyvah", "Babam ve Oglum")
 kable(head(movies |> arrange(desc(Rating)) |> mutate(Rank = row_number()) |> filter(Title %in% my_favs), 5), caption = "My Favorites")
 ```
