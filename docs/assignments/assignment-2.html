@@ -472,8 +472,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As a member of Generation Z, I can’t understand why Yeşilçam films are still so loved. I think their ongoing popularity is not because they are genuinely great films, but rather due to a nostalgia for the old Turkey.</p>
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>top_5_movies <span class="ot">&lt;-</span> movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Rating)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(top_5_movies, <span class="dv">5</span>), <span class="at">caption =</span> <span class="st">"Bottom 5 Movies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bottom_5_movies <span class="ot">&lt;-</span> movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Rating)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(bottom_5_movies, <span class="dv">5</span>), <span class="at">caption =</span> <span class="st">"Bottom 5 Movies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="table">
@@ -527,6 +527,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <p>In my opinion, take these films and throw them in the trash.</p>
+<p><em>b. Let’s check my favorite movies :D</em></p>
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_favs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Ölümlü Dünya"</span>, <span class="st">"Ölümlü Dünya 2"</span>, <span class="st">"G.O.R.A."</span>, <span class="st">"Eyvah Eyvah"</span>, <span class="st">"Babam ve Oğlum"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>((movies <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Rating)) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Rank =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> <span class="fu">filter</span>(Title <span class="sc">%in%</span> my_favs)), <span class="at">caption =</span> <span class="st">"My Favorites"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table">
+<caption>My Favorites</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+<th style="text-align: right;">Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G.O.R.A.</td>
+<td style="text-align: right;">2004</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">66034</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ölümlü Dünya</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">7.6</td>
+<td style="text-align: right;">30279</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ölümlü Dünya 2</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">117</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3519</td>
+<td style="text-align: right;">109</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 </section>
