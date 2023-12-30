@@ -9,6 +9,8 @@ editor:
     wrap: 70
 ---
 
+My second assignment has 4 parts.
+
 ## Part 1
 
 Using the filters on https://m.imdb.com/search, Turkish movies with
@@ -16,6 +18,7 @@ more than 2500 reviews are saved in the URLs.
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
+#| code-summary: "Show the code"
 library(tidyverse)
 library(rvest)
 library(stringr)
@@ -33,5 +36,71 @@ Rating, Votes
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
+#| code-summary: "Show the code"
 
+# Initialize an empty data frame
+movies_df <- tibble(Title = character(), Year = numeric(), Duration = character(), Rating = numeric(), Votes = numeric())
+
+
+# Function to convert duration from to minutes
+convert_to_minutes <- function(time_str) {
+  if (str_detect(time_str, "h")) {
+    # "h" ve "m" arasındaki dakikaları ve "h"den önceki saatleri bul
+    hours <- as.numeric(str_extract(time_str, "\\d+(?=h)"))
+    minutes <- as.numeric(str_extract(time_str, "(?<=h)\\s*\\d+"))
+    total_minutes <- hours * 60 + ifelse(is.na(minutes), 0, minutes)
+  } else {
+    # "h" bulunmuyorsa ilk iki karakteri al
+    total_minutes <- as.numeric(substr(time_str, 1, str_detect(time_str, "m")*2))
+  }
+  return(total_minutes)
+}
+
+# Loop through each URL
+for (url in urls) {
+  data_html <- read_html(url)
+  
+  # Extracting movie titles
+  title_names <- data_html |> html_nodes('.ipc-title__text') |> html_text()
+  title_names <- tail(head(title_names, -1), -1)
+  title_names <- str_split(title_names, " ", n = 2)
+  title_names <- unlist(lapply(title_names, function(x) {x[2]}))
+  
+  # Extracting years
+  year <- data_html %>% html_nodes(".sc-43986a27-7.dBkaPT.dli-title-metadata")
+  year <- html_text(year)
+  year <- substr(year, 1, 4)
+  year <- as.numeric(year)
+  
+  # Extracting durations
+  duration <- data_html %>% html_nodes(".sc-43986a27-7.dBkaPT.dli-title-metadata")
+  duration <- html_text(duration)
+  duration <- substr(duration, start = 5, stop = 14)
+
+  # Extracting ratings
+  rating <- data_html %>% html_nodes(".ipc-rating-star.ipc-rating-star--base.ipc-rating-star--imdb.ratingGroup--imdb-rating")
+  rating <- html_text(rating)
+  rating <- substr(rating, 1, 3)
+  rating <- as.numeric(rating)
+  
+  # Extracting votes
+  vote <- data_html %>% html_nodes(".sc-53c98e73-0.kRnqtn")
+  vote <- html_text(vote)
+  vote <- sub("Votes", "" ,vote)
+  vote <- sub(",", "", vote)
+  vote <- as.numeric(vote)
+  
+  
+  temp_df <- tibble(Title = title_names, Year = year, Duration = duration, Rating = rating, Votes = vote)
+  
+  # Append to the main data frame
+  movies_df <- bind_rows(movies_df, temp_df)
+}
+
+#The function written above is run to organize the durations of the films
+duration_final <- sapply(movies_df$Duration, convert_to_minutes)
+movies_df$Duration <- duration_final
+
+# Final results
+print(movies_df)
 ```
