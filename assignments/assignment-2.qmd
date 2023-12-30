@@ -147,3 +147,61 @@ In my opinion, take these films and throw them in the trash.
 my_favs = c("Ölümlü Dünya", "Ölümlü Dünya 2", "G.O.R.A.", "Eyyvah Eyvah", "Babam ve Oglum")
 kable(head(movies |> arrange(desc(Rating)) |> mutate(Rank = row_number()) |> filter(Title %in% my_favs), 5), caption = "My Favorites")
 ```
+
+*c. Visualization of the dataset*
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+movies |> group_by(Year) |> summarise(rating_ave = 
+  mean(Rating)) |> ggplot(aes(x = Year, 
+  y = rating_ave)) + geom_smooth(method = "lm", se = FALSE, color = "blue", formula = y ~ x) + ylab("Average Ratings of Turkish Movies") + geom_point()
+
+```
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+movies %>% group_by(Year) |> summarise(movies_num = n())   |> ungroup() |> ggplot(aes(x = Year, y = movies_num)) + ylab("Number of Turkish Movies") + geom_point()
+```
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+movies |> ggplot(aes(x = Year, y = Rating, group = Year, fill = Year)) + geom_boxplot()
+
+```
+
+*d. Correlation between the number of votes a movie received and its
+rating*
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+ggplot(movies, aes(x = log(Votes), y = Rating)) + geom_point()
+corr1 = cor(movies$Rating, movies$Votes)
+print(paste("Correlation is:", corr1))
+```
+
+Correlation value is small. By looking at the graph, we can't say
+there is a strong relationship between votes and ratings.
+
+*e. Correlation between a movie\'s duration and its rating*
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+ggplot(movies, aes(x = Rating, y = Duration)) + geom_point()
+corr2 = cor(movies$Rating, movies$Duration)
+print(paste("Correlation is:", corr2))
+```
+
+Correlation value is too small. There is almost no linear relationship
+between duration and rating.
+
+## Part 4
