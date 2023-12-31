@@ -34,8 +34,7 @@ url <- c(first,second)
 ## Part 2
 
 Made web scrapping to create a Data Frame with columns: Title, Year,
-Duration,
-Rating, Votes.
+Duration, Rating, Votes.
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
@@ -105,7 +104,7 @@ duration_final <- sapply(movies$Duration, convert_to_minutes)
 movies$Duration <- duration_final
 
 # Final results
-kable(head(movies,10), caption = "Movies")
+kable(head(movies,10), caption = "Turkish Movies")
 ```
 
 ## Part 3
@@ -160,6 +159,8 @@ movies |> group_by(Year) |> summarise(rating_ave =
 
 ```
 
+That's sad...
+
 ```{r, message=FALSE, results='asis'}
 #| warning: false
 #| code-summary: "Show the code"
@@ -190,7 +191,7 @@ print(paste("Correlation is:", corr1))
 Correlation value is small. By looking at the graph, we can't say
 there is a strong relationship between votes and ratings.
 
-*e. Correlation between a movie\'s duration and its rating*
+*e. Correlation between a movie's duration and its rating*
 
 ```{r, message=FALSE, results='asis'}
 #| warning: false
@@ -205,3 +206,54 @@ Correlation value is too small. There is almost no linear relationship
 between duration and rating.
 
 ## Part 4
+
+Turkish movies that are in the top 1000 movies on IMDb:
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+url <- "https://m.imdb.com/search/title/?title_type=feature&groups=top_1000&country_of_origin=TR"
+
+new_html <- read_html(url)
+
+title_names2 <- new_html |> html_nodes('.ipc-title__text') |> html_text()
+title_names2 <- tail(head(title_names2, -1), -1)
+title_names2 <- str_split(title_names2, " ", n = 2)
+title_names2 <- unlist(lapply(title_names2, function(x) {x[2]}))
+  
+year2 <- new_html %>% html_nodes(".sc-43986a27-7.dBkaPT.dli-title-metadata")
+year2 <- html_text(year2)
+year2 <- substr(year2, 1, 4)
+year2 <- as.numeric(year2)
+
+top_1000 <- tibble(Title = title_names2, Year = year2)
+kable(top_1000, caption = "Turkish Movies in IMDb Top 1000")
+```
+
+Let's find the duration, rating and votes of these movies by using
+left join on Turkish Movies Data Frame, then order by their ratings.
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+top_1000_joined <- top_1000 |> left_join(movies, by = "Title", suffix = c(" ", " "))
+kable((top_1000_joined |> arrange(desc(Rating))), caption = "Turkish Movies in IMDb Top1000 Ordered by Ratings")
+```
+
+Are these the same first high-rated 11 movies in our initial data
+frame? Let's see!
+
+```{r, message=FALSE, results='asis'}
+#| warning: false
+#| code-summary: "Show the code"
+
+kable(head((movies |> arrange(desc(Rating))),11), caption = "Turkish Movies Top 11")
+```
+
+It can be clearly seen from here that IMDb takes care to include more
+recent movies when creating the Top 1000 list. Because while the list
+of the top 11 Turkish movies consists almost entirely of films
+produced before 1990, the Turkish movies in the top 1000 list are
+productions from after 1990.
